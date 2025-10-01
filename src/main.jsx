@@ -6,7 +6,11 @@ import App from "./App.jsx";
 import Contact from "./routes/Contact.jsx";
 
 // 1 - Configuração router
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
 // 2 - Página de error
 import ErrorPage from "./routes/ErrorPage.jsx";
@@ -19,6 +23,9 @@ import Product from "./routes/Product.jsx";
 
 // 8 - nested route
 import Info from "./routes/Info.jsx";
+
+// 9 - search params
+import Search from "./routes/Search.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +51,16 @@ const router = createBrowserRouter([
       {
         path: "products/:id/info",
         element: <Info />,
+      },
+      // 9 - search
+      {
+        path: "search",
+        element: <Search />,
+      },
+      // 10 - teste
+      {
+        path: "teste",
+        element: <Navigate to="/" />,
       },
     ],
   },
